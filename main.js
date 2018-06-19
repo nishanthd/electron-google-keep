@@ -4,7 +4,7 @@ const { app, BrowserWindow, BrowserView } = require('electron')
 let mainWindow
 
 function createWindow() {
-  mainWindow = new BrowserWindow({ width: 800, height: 600, frame: false })
+  mainWindow = new BrowserWindow({ width: 800, height: 600 })
 
 
   let view = new BrowserView({
@@ -14,10 +14,14 @@ function createWindow() {
   })
   mainWindow.setBrowserView(view)
   view.setBounds({ x: 0, y: 0, width: 800, height: 600 })
+  view.setAutoResize({ width: true, height: true })
   view.webContents.loadURL('https://keep.google.com')
 
   mainWindow.on('closed', function () {
     mainWindow = null
+  })
+  mainWindow.on('maximize', function () {
+
   })
 }
 

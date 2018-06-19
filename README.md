@@ -1,1 +1,1 @@
-# Google-Keep in Electron
+# Standalone google-keep application.
